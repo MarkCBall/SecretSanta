@@ -1,0 +1,16 @@
+
+<% if (message != "") { %>
+<h3>error: <%= message %></h3>
+<% } %>
+<form action="/blog" method="post">
+		Title: <br>
+	<input type="text" name="title" value="<%- post['title'] || "" %>" required> <br>
+		Content:<br>
+<textarea name="content" required><%- post['content'] || "" %></textarea><br>
+<div>
+	<input type="submit" value="Submit"/><br><br><hr>
+</div>		
+</form>
+
+<%- contentFor('title') %>
+<%= title %>
