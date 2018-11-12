@@ -9,8 +9,7 @@ var logger = require('morgan');
 
 //ROUTES TO CHANGE
 var indexRouter = require('./routes/index');
-var postsRouter = require('./routes/posts');
-var usersRouter = require('./routes/users');
+var groupRouter = require('./routes/camball');
 
 
 var database = require('./database/database');
@@ -34,8 +33,8 @@ app.use(expressLayouts);
 
 //ROUTES TO CHANGE
 app.use('/', indexRouter);
-app.use('/blog', postsRouter);
-app.use('/user', usersRouter);
+app.use('/camball', groupRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
