@@ -1,11 +1,34 @@
 
 <!-- Contains partial for the posts index page -->
 
-<h1>Articles</h1>
-<a href="/blog/new"><h3>New post</h3></a>
-<% posts.forEach(function(post) { %>
-  <% include ./post_summary %>
- <% }) %>
 
-<%- contentFor('title') %>
-<%= title %>
+
+<h1>Add names for camball's secret santa app</h1>
+
+<% camballs.forEach(function(camball) { %>
+  <p><%- camball.partner1 %> &nbsp&nbsp&nbsp&nbsp&nbsp <%- camball.partner2 %>
+  <button onclick="var xhr = new XMLHttpRequest(); xhr.open('DELETE', '/camball/<%- camball.partner1 %>', true); xhr.send();">delete</button>
+  </p>
+  <% }) %>
+
+
+  
+
+
+
+
+
+<form method="post">
+  Partner 1
+  <input type="text" name="partner1">
+  Parnter 2
+  <input type="text" name="partner2">
+  <input type="submit" value="Submit">
+</form>
+
+<button onclick="var xhr = new XMLHttpRequest(); xhr.open('PUT', '/camball', true); xhr.send();">Finalize</button>
+  
+
+<!-- <form method="post" action="/finalize"> -->
+  <!-- <input type="submit" value="Finalize participants"> -->
+<!-- </form> -->

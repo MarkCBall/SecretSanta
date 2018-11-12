@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message
   if (req.method === "POST" || req.method === "PUT" && err.name === 'ValidationError') {
     res.locals.post = req.body
-    res.render('posts/new', {title: "New Blog Post"})
+    res.render('index', {title: "New Blog Post"})
   } else {
     // set locals, only providing error in development
     res.locals.message = err.message;
