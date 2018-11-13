@@ -6,7 +6,10 @@
 <h1>Add names for camball's secret santa app</h1>
 
 <% camballs.forEach(function(camball) { %>
-  <p><%- camball.partner1 %> &nbsp&nbsp&nbsp&nbsp&nbsp <%- camball.partner2 %>
+  <p>
+      <a href="/camball/<%- camball.partner1 %>"<h2><%- camball.partner1 %></h2></a> 
+    &nbsp&nbsp&nbsp&nbsp&nbsp 
+    <a href="/camball/<%- camball.partner2 %>"<h2><%- camball.partner2 %></h2></a>
   <button onclick="var xhr = new XMLHttpRequest(); xhr.open('DELETE', '/camball/<%- camball.partner1 %>', true); xhr.send();">delete</button>
   </p>
   <% }) %>
