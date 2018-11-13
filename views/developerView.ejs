@@ -1,5 +1,16 @@
 
 
 
-<%= docs[0].name %> you need to give a gift to <%= docs[0].giftTo %><br>
+<input id="password" value="password here"></div>
 
+
+<div id="giver"><%= docs[0].name %> you need to give a gift to <button onclick="if (document.getElementById('password').value == document.getElementById('giver').innerHTML.charCodeAt(1)) window.alert('<%= docs[0].giftTo %>'); else window.alert('wrong password') ">Validate</button>
+</div>
+
+<br>
+
+<button hidden="true" onclick="window.alert( document.getElementById('giver').innerHTML.charCodeAt(1))">whats my password?</button>
+
+<script>
+document.getElementById("password").innerHTML = parseInt(<%= docs[0].name %>);
+</script>
